@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-header">
+    <h1>Combined Risk Dashboard</h1>
+    <div class="header-meta">Real-time simulation (laptop mode)</div>
+</header>
+
+<div class="grid">
+    <div class="card">
+        <h3>Landslide Risk</h3>
+        <div id="landslideRisk" class="risk-box"></div>
+        <canvas id="miniLS"></canvas>
+
+    </div>
+
+    <div class="card">
+        <h3>Flood Risk</h3>
+        <div id="floodRisk" class="risk-box"></div>
+        <canvas id="miniFL"></canvas> 
+    </div>
+
+    <div class="card wide">
+        <h3>Combined Risk</h3>
+        <div id="combinedRisk" class="risk-box large"></div>
+        <canvas id="miniCombined"></canvas>
+    </div>
+
+    <div class="card wide">
+        <h3>Notifications</h3>
+        <ul id="globalNotif"></ul>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/combined.js') }}"></script>
+{% endblock %}

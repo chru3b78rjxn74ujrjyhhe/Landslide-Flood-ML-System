@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-header">
+    <h1>Flood Dashboard</h1>
+</header>
+
+<div class="grid">
+    <div class="card">
+        <h3>Water Level (Ultrasonic)</h3>
+        <canvas id="waterLevel" height="140"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Rain Intensity</h3>
+        <canvas id="rainIntensity" height="140"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Soil Saturation</h3>
+        <canvas id="soilSat" height="140"></canvas>
+    </div>
+
+    <div class="card wide">
+        <h3>Flood Danger</h3>
+        <div id="floodDanger" class="risk-box large">0%</div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/flood.js') }}"></script>
+{% endblock %}

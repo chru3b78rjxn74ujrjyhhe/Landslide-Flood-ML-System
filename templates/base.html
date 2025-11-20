@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{{ title or "Monitoring Dashboard" }}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/graphs.css') }}">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR TOGGLE BUTTON -->
+    <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="brand">🌍 Landslide & Flood</div>
+
+        <nav>
+            <a href="/" class="nav-link">Combined</a>
+            <a href="/landslide" class="nav-link">Landslide</a>
+            <a href="/flood" class="nav-link">Flood</a>
+            <a href="/camera" class="nav-link">Camera</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="themeToggle" class="theme-btn">🌙</button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- GLOBAL JS -->
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

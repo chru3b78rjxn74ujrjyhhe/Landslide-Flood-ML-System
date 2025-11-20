@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-header">
+    <h1>Landslide Dashboard</h1>
+</header>
+
+<div class="grid">
+    <div class="card">
+        <h3>Soil Moisture 1</h3>
+        <canvas id="soil1" height="140"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Soil Moisture 2</h3>
+        <canvas id="soil2" height="140"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Tilt</h3>
+        <canvas id="tiltGraph" height="140"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Vibration</h3>
+        <canvas id="vibration" height="140"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>Rain</h3>
+        <p id="rainStatus">Loading...</p>
+    </div>
+
+    <div class="card wide">
+        <h3>Landslide Danger</h3>
+        <div id="landslideDanger" class="risk-box large">0%</div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/landslide.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,7 @@
+flask
+pandas
+numpy
+tensorflow==2.11.0
+scikit-learn
+joblib
+pyserial
